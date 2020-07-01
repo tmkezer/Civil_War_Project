@@ -66,6 +66,8 @@ clusterMaxZoom: 14, // Max zoom to cluster points on
 clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
 });
  
+
+
 map.addLayer({
 id: 'clusters',
 type: 'circle',
@@ -80,11 +82,11 @@ paint: {
 'circle-color': [
 'step',
 ['get', 'point_count'],
-'#51bbd6',
+'#9d99ff',
 100,
-'#f1f075',
+'#5a54ff',
 750,
-'#f28cb1'
+'#0800ff'
 ],
 'circle-radius': [
 'step',
@@ -148,7 +150,8 @@ zoom: zoom
 // description HTML from its properties.
 map.on('click', 'unclustered-point', function(e) {
 var coordinates = e.features[0].geometry.coordinates.slice();
-var mag = e.features[0].properties.mag;
+var Title = e.features[0].properties.Title;
+var Link = e.features[0].properties.Link;
 var tsunami;
  
 if (e.features[0].properties.tsunami === 1) {
@@ -167,7 +170,7 @@ coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
 new mapboxgl.Popup()
 .setLngLat(coordinates)
 .setHTML(
-'magnitude: ' + mag + '<br>Was there a tsunami?: ' + tsunami
+ `<a href=${Link}> ${Title} </a><br>Placeholder Text:`
 )
 .addTo(map);
 });
@@ -182,3 +185,139 @@ map.getCanvas().style.cursor = '';
 
 
 
+// ## second dataset who's heritage is it anyway cluster map
+// 
+map.on('load', function() {
+    // Add a new source from our GeoJSON data and
+    // set the 'cluster' option to true. GL-JS will
+    // add the point_count property to your source data.
+    map.addSource('confed-Markers', {
+    type: 'geojson',
+    // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
+    // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
+    data:
+    'static/data/whos_heritage_lat_long3.geojson',
+    cluster: true,
+    clusterMaxZoom: 14, // Max zoom to cluster points on
+    clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+    });
+     
+    
+    
+    map.addLayer({
+    id: 'clusters-confed',
+    type: 'circle',
+    source: 'confed-Markers',
+    filter: ['has', 'point_count'],
+    paint: {
+    // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+    // with three steps to implement three types of circles:
+    //   * Blue, 20px circles when point count is less than 100
+    //   * Yellow, 30px circles when point count is between 100 and 750
+    //   * Pink, 40px circles when point count is greater than or equal to 750
+    'circle-color': [
+    'step',
+    ['get', 'point_count'],
+    '#ffa696',
+    100,
+    '#ed7a1c',
+    750,
+    '#fc0000'
+    ],
+    'circle-radius': [
+    'step',
+    ['get', 'point_count'],
+    20,
+    100,
+    30,
+    750,
+    40
+    ]
+    }
+    });
+     
+    map.addLayer({
+    id: 'cluster-count-confed',
+    type: 'symbol',
+    source: 'confed-Markers',
+    filter: ['has', 'point_count'],
+    layout: {
+    'text-field': '{point_count_abbreviated}',
+    'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+    'text-size': 12
+    }
+    });
+
+map.addLayer({
+    id: 'unclustered-point-confed',
+    type: 'circle',
+    source: 'confed-Markers',
+    filter: ['!', ['has', 'point_count']],
+    paint: {
+    'circle-color': '#c23313',
+    'circle-radius': 4,
+    'circle-stroke-width': 1,
+    'circle-stroke-color': '#fff'
+    }
+    })
+});
+// inspect a cluster on click
+map.on('click', 'clusters-confed', function(e) {
+    var features = map.queryRenderedFeatures(e.point, {
+    layers: ['clusters-confed']
+    });
+    var clusterId = features[0].properties.cluster_id;
+    map.getSource('confed-Markers').getClusterExpansionZoom(
+    clusterId,
+    function(err, zoom) {
+    if (err) return;
+     
+    map.easeTo({
+    center: features[0].geometry.coordinates,
+    zoom: zoom
+    });
+    }
+    );
+    });
+     
+    // When a click event occurs on a feature in
+    // the unclustered-point layer, open a popup at
+    // the location of the feature, with
+    // description HTML from its properties.
+    map.on('click', 'unclustered-point-confed', function(e) {
+    var coordinates = e.features[0].geometry.coordinates.slice();
+    var Title = e.features[0].properties.feature_name;
+    var Honorees = e.features[0].properties.Honorees;
+
+    // leftover snippit
+    // var tsunami;
+     
+    // if (e.features[0].properties.tsunami === 1) {
+    // tsunami = 'yes';
+    // } else {
+    // tsunami = 'no';
+    // }
+     
+    // Ensure that if the map is zoomed out such that
+    // multiple copies of the feature are visible, the
+    // popup appears over the copy being pointed to.
+    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+    }
+    
+    new mapboxgl.Popup()
+    .setLngLat(coordinates)
+    .setHTML(
+     `${Honorees} ${Title} </a><br>Placeholder Text:`
+    )
+    .addTo(map);
+    });
+     
+    map.on('mouseenter', 'clusters', function() {
+    map.getCanvas().style.cursor = 'pointer';
+    });
+    map.on('mouseleave', 'clusters', function() {
+    map.getCanvas().style.cursor = '';
+    });
+    
+    
