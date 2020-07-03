@@ -17,54 +17,14 @@
   <link rel="stylesheet" href="static/css/leaflet.extra-markers.min.css">
 
   <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  <!-- <link rel="stylesheet" type="text/css" href="static/css/style.css"> -->
   <!-- mapbox-gl  -->
-  <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
-  <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
-<style>
-	body { margin: 0; padding: 0; }
-	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
-</style>
-</head>
-<!-- this is a test -->
-<body>
-
-  <!-- The div that holds our map -->
-  <div id="map"></div>
-
-  <!-- D3 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
-  <!-- d3 JavaScript -->
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-
-  <!-- MomentJS -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-
-  <!-- Leaflet JavaScript -->
-  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
-    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
-    crossorigin=""></script>
-
-  <!-- Icons -->
-  <script src="static/js/leaflet.extra-markers.min.js"></script>
-
-  <!-- polyfill.io is library for using newer JavaScript features in older browers (such as Object.assign) -->
-  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-
-  <!-- API Key -->
-  <script type="text/javascript" src="static/js/config.js"></script>
-
-  <!-- Our JavaScript -->
-  <script type="text/javascript" src="static/js/logic.js"></script>
-
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
   
-  
-</body>
 
-</html>
-
-<head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Civil War Project</title>
     <!-- Google Font -->
@@ -83,10 +43,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navstyle.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    
 </head>
-
+<!-- this is a test -->
 <body>
+   <!-- The div that holds our map -->
+   <!-- <div id="map"></div> -->
 
+    
     <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
             <a class="navbar-brand mr-4" href="/">Civil War Project</a>
@@ -107,26 +72,56 @@
         </div>
     </nav>
 
+        <!-- Content Section -->
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+      <div class="col-lg-7 col-md-12" >
+        <!-- Left box  -->
+        <div class="box">
+          <h3 class="title">Civil War Monuments</h3>
+          <hr>
+          <!-- <p>Map1</p> -->
+                <div id="map" style="width: 650px; height: 350px;"></div>
+          
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-12">
+        <!-- Right Box -->
+        <div class="box">
+          <h3 class="title">Visualizations</h5>
+         <hr>
+
+          <div class="container">
+            <div class="row" >
+              <div class="col-6">
+                <div id="map-id" style="width: 650px; height: 350px;"></div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- 
     <div class="container">
-        <div class="row">
-            <div class="col-md-8">
+        <div class="row"style="padding: 30px;">
+            <div class="col-6"> </div>
                 <p>Map1</p>
+                <div id="map" style="width: 650px; height: 350px;"></div>
+            </div>
+            <div class="col-6">
+                <p>Map2</p>
                 <div id="map-id" style="width: 650px; height: 350px;"></div>
             </div>
-            <div class="col-md-4">
-                <p>Map2</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <p>Map3</p>
-                <div id="map" style="width: 450px; height: 350px;"></div>
-            </div>
-            <div class="col-md-6">
-                <p>Map4</p>
-            </div>
-        </div>
-    </div>
+        </div> -->
+        
+
+
     <!-- D3 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
 
@@ -148,8 +143,9 @@
     <script src="{{ url_for('static', filename='js/config.js') }}"></script>
 
     <!-- Our JavaScript -->
+    <script src="{{ url_for('static', filename='js/logic.js') }}"></script>
     <script src="{{ url_for('static', filename='js/logic1.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/logic3.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/logic3.js') }}"></script> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -159,6 +155,27 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <!-- D3 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+  <!-- d3 JavaScript -->
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+  <!-- MomentJS -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+    crossorigin=""></script>
+
+  <!-- Icons -->
+  <script src="static/js/leaflet.extra-markers.min.js"></script>
+
+  <!-- polyfill.io is library for using newer JavaScript features in older browers (such as Object.assign) -->
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+
+  <!-- API Key -->
+  <script type="text/javascript" src="static/js/config.js"></script>
 
 </body>
 

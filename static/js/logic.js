@@ -47,8 +47,8 @@ mapboxgl.accessToken = API_KEY;
 var map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/dark-v10',
-center: [-98, 38],
-zoom: 4
+center: [-90.4194, 37.7749],
+zoom: 2.6
 });
  
 map.on('load', function() {
@@ -59,15 +59,13 @@ map.addSource('HMdb-Markers', {
 type: 'geojson',
 // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
 // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
-data:
-'static/data/HMdb-Markers.geojson',
-cluster: true,
-clusterMaxZoom: 14, // Max zoom to cluster points on
-clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+    data:
+    'static/data/HMdb-Markers.geojson',
+    cluster: true,
+    clusterMaxZoom: 14, // Max zoom to cluster points on
+    clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
 });
  
-
-
 map.addLayer({
 id: 'clusters',
 type: 'circle',
