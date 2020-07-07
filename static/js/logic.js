@@ -322,3 +322,10 @@ function toggleCheck() {
       removeHMDBLayer();confed();
     }
   }
+  
+  $(function(){
+    $('.toggle').on('click', function(event){
+      event.preventDefault();
+      $(this).toggleClass('active');
+    });
+  });
