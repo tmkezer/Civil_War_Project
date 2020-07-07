@@ -84,3 +84,79 @@ p{
       font-weight: bolder; 
       padding-top: 25px; 
     }
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.axis {
+  font: 14px sans-serif;
+}
+
+.line {
+  fill: rgb(173, 242, 245);
+  stroke: rgb(255, 0, 0);
+  stroke-width: 2px;
+}
+
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: rgb(158, 243, 239);}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0BADA6;
+  color: white;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.axis {
+  font: 14px sans-serif;
+}
+
+.line {
+  fill: rgb(173, 242, 245);
+  stroke: rgb(255, 0, 0);
+  stroke-width: 2px;
+}
+
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: rgb(158, 243, 239);}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0BADA6;
+  color: white;
+}

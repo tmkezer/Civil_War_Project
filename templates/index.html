@@ -38,8 +38,11 @@
     <!-- Our CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navstyle.css') }}">
    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+   <link rel="stylesheet" href="style.css">
     
 </head>
 <!-- this is a test -->
@@ -125,22 +128,67 @@
       <div class="col-lg-5 col-md-12">
         <!-- Right Box -->
         <div class="box">
-          <h3 class="title">Visualizations</h3>
+          <h3 class="title">Civil War Monuments Erected Over Time</h3>
          <hr>
+         <div class="container">
+          <div class="row">
+              <div class="col-xs-12 col-md-12">
+                  <!-- <h1>Civil War Monuments Erected Over Time</h1> -->
+              </div>
+          </div>
+          <button onclick="update(csv1)">Dataset 1</button>
+          <button onclick="update(csv2)">Dataset 2</button>
+          <div class="row">
+              <div class="col-md-7">
+                  <div id="scatter">
+                      <!-- We append our chart here. -->
+                  </div>
+              </div>
+              
+          </div>
+      </div>
 
-          <div class="container">
+
+
+
+          <!-- <div class="container">
             <div class="row" >
               <div class="col-6">
                 <div id="map-id" style="width: 650px; height: 350px;"></div>
               </div>
             </div>
-          </div>
+          </div> -->
 
 
         </div>
       </div>
     </div>
   </div>
+  <!-- <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <h1>Civil War Monuments Erected Over Time</h1>
+        </div>
+    </div>
+    <button onclick="update(csv1)">Dataset 1</button>
+    <button onclick="update(csv2)">Dataset 2</button>
+    <div class="row">
+        <div class="col-md-7">
+            <div id="scatter">
+                <!-- We append our chart here. -->
+            </div>
+        </div>
+        
+    </div>
+</div> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+
+
+
+
+
 <!-- 
     <div class="container">
         <div class="row"style="padding: 30px;">
@@ -180,6 +228,9 @@
     <!-- <script type="text/javascript" src="/static/js/logic.js"></script> -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/logic.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/logic1.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/graph_logic.js') }}"></script>
+
+    <!-- <script src="terbear/graph_logic.js"></script> -->
     <!-- <script src="{{ url_for('static', filename='js/logic3.js') }}"></script> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
