@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Civil War Monuments</title>
 
+   <!-- our style.css sheet -->
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
 
@@ -40,7 +43,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navstyle.css') }}">
-   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+   
    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-toggle.css') }}">
    <!-- Bootstrap template dependencies  -->
    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,7 +62,12 @@
          <!-- Fonts CSS-->
          <link rel="stylesheet" href="/static/css/heading.css">
          <link rel="stylesheet" href="/static/css/body.css">
-</head>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+        
+        </head>
 <!-- new nav bar -->
 <body id="page-top">
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
@@ -198,7 +206,18 @@
             </div>
         </div>
     </div>
-
+    <div class="row">
+        <div class="col-lg-7 col-md-12" >
+          <!-- Left box  -->
+          <div class="box">
+            <h3 class="title">Monument types</h3>
+            <hr>
+            
+            <div id="svg-area" ></div>
+            
+          </div>
+        </div>
+        
 
 
 
@@ -235,13 +254,16 @@
                           </ul>
                         </div>
                         <button id="filter-btn" type="submit" class="btn btn-default" onkeyup="clickSelect()">Reset Table</button>
-                      </form>
+                        <button type="button" name="load_data" id="load_data" class="btn btn-info">Load Data</button>
+                    </form>
                     </div>
                   </div>
                 </aside>
               </div>
               <div class="col-md-12">
-                <div id="table-area" class="table-responsive">
+                <div id="hmdb_table" class="table_format">      
+             </div>
+                <!-- <div id="table-area" class="table-responsive">
                   <table id="ufo-table" class="table table-striped">
                     <thead>
                       <tr>
@@ -257,14 +279,14 @@
                     <tbody>            
                     </tbody>
                   </table>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-        <script src="/static/js/data.js"></script>
-        <script src="/static/js/app.js"></script>
+        <script src="{{ url_for('static', filename='js/download.js') }}"></script>
+        <!-- <script src="/static/js/data.js"></script>
+        <script src="/static/js/app.js"></script> -->
       </body>
         <!-- Icon Divider-->
        
@@ -288,7 +310,7 @@
                                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                 <div class="divider-custom-line"></div>
                             </div>
-                            <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="Log Cabin"/>
+                            <!-- Portfolio Modal - Image-->
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                             <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
@@ -315,7 +337,7 @@
                                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                 <div class="divider-custom-line"></div>
                             </div>
-                            <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/cake.png" alt="Tasty Cake"/>
+                            <!-- Portfolio Modal - Image-->
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                             <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
@@ -342,7 +364,7 @@
                                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                 <div class="divider-custom-line"></div>
                             </div>
-                            <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/circus.png" alt="Circus Tent"/>
+                            <!-- Portfolio Modal - Image-->
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                             <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
@@ -369,7 +391,7 @@
                                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                 <div class="divider-custom-line"></div>
                             </div>
-                            <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/game.png" alt="Controller"/>
+                            <!-- Portfolio Modal - Image-->
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                             <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
@@ -396,7 +418,7 @@
                                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                 <div class="divider-custom-line"></div>
                             </div>
-                            <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/safe.png" alt="Locked Safe"/>
+                            <!-- Portfolio Modal - Image-->
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                             <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
@@ -423,7 +445,7 @@
                                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                 <div class="divider-custom-line"></div>
                             </div>
-                            <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/submarine.png" alt="Submarine"/>
+                            <!-- Portfolio Modal - Image-->
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                             <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
@@ -490,8 +512,8 @@
     </div>  
 
   
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
 
 <section>
@@ -519,8 +541,8 @@
 
 
     <!-- D3 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script> -->
 
     <!-- MomentJS -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
@@ -537,22 +559,19 @@
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 
     <!-- API Key -->
-    <!-- <script src="{{ url_for('static', filename='js/config.js') }}"></script> -->
+    <script src="{{ url_for('static', filename='js/config.js') }}"></script>
 
     <!-- Our JavaScript -->
     <!-- <script type="text/javascript" src="/static/js/logic.js"></script> -->
-    <script type="text/javascript" src="{{ url_for('static', filename='js/logic.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/logic1.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/graph_logic.js') }}"></script>
-
+   
     <!-- <script src="terbear/graph_logic.js"></script> -->
     <!-- <script src="{{ url_for('static', filename='js/logic3.js') }}"></script> -->
     <!-- <script src="{{ url_for('static', filename='js/logic1.js') }}"></script> -->
-    <script src="{{ url_for('static', filename='js/logic3.js') }}"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
@@ -587,10 +606,15 @@
   <!-- Third party plugin JS-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
   <!-- Contact form JS-->
-  <script src="/assets/mail/jqBootstrapValidation.js"></script>
-  <script src="/assets/mail/contact_me.js"></script>
+  <!-- <script src="/static/mail/jqBootstrapValidation.js"></script> -->
+  <!-- <script src="/static/mail/contact_me.js"></script> -->
   <!-- Core theme JS-->
   <script src="/static/js/scripts.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/logic.js') }}"></script>
+  <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/logic1.js') }}"></script> -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/graph_logic.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/logic3.js') }}"></script>
+
 </body>
 
 </html>

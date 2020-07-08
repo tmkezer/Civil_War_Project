@@ -22,7 +22,7 @@
 $(document).ready(function () {
     $('#load_data').click(function () {
       $.ajax({
-        url: "static/downloaddata/civil_war_data_hmdb.csv",
+        url: "/static/downloaddata/civil_war_data_hmdb.csv",
         dataType: "text",
         success: function (data) {
           var hmdb_data = data.split(/\r?\n|\r/);

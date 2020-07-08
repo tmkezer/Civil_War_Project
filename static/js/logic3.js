@@ -1,5 +1,6 @@
 // Dataset we will be using to set the height of our rectangles.
-d3.json("../api/v1.0/bargraph").then(function(data) {
+console.log("Logic3 Loaded");
+d3.json("/api/v1.0/bargraph", function(data) {
   
   // data
   var dataNumber = [];
@@ -12,8 +13,8 @@ d3.json("../api/v1.0/bargraph").then(function(data) {
 // console.log(dataNumber);
 // console.log(dataTitle);
 // svg container
-var svgHeight = 600;
-var svgWidth = 800;
+var svgHeight = 400;
+var svgWidth = 700;
 
 // margins
 var margin = {

@@ -48,11 +48,11 @@ function update(csv) {
 
         monumentData.forEach(function (data) {
             data.textyear = +data.year;
-            console.log("textyear value");
-            console.log(data.textyear);
+            // console.log("textyear value");
+            // console.log(data.textyear);
             data.year = parseTime(data.year);
-            console.log("year value")
-            console.log(data.year);
+            // console.log("year value")
+            // console.log(data.year);
             data.monuments_erected = +data.monuments_erected;
         });
 

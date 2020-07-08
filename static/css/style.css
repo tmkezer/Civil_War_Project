@@ -409,3 +409,7 @@ body {
     height: 700px;
 
 }
+.table_format a{
+  color: #007dff !important;
+  text-underline-position: below !important;
+}
