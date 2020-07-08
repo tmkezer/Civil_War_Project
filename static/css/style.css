@@ -5,29 +5,27 @@ html,
   padding: 0;
   margin: 0;
 }
-
-.legend {
-  padding: 10px;
-  font-family: Sanchez, serif;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 18px;
-  color: #555;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+.toolTip {
+  position: absolute;
+  width: 135px;
+  height: 30px;
+  padding: 2px;
+  padding-top: 8px;
+  font: 12px sans-serif;
+  color: white;
+  text-align: center;
+  background: #1aafa7;
+  border: 0;
+  border-radius: 10px;
 }
 
-.legend .low {
-  color: #ec8a2e;
+.filters {
+  margin-top: 10px;
 }
 
-.legend .empty {
-  color: #a0353a;
-}
 
-.legend .coming-soon {
-  color: #f4ba48;
+#table-area th {
+  text-align: center;
 }
 
 .legend .healthy {
