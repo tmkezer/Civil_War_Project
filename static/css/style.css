@@ -14,3 +14,16 @@
   border: 0;
   border-radius: 10px;
 }
+
+.filters {
+  margin-top: 10px;
+}
+
+
+#table-area th {
+  text-align: center;
+}
+
+.margin-top-50 {
+  margin-top: 50px;
+}
