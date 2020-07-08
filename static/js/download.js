@@ -47,7 +47,7 @@ $(document).ready(function () {
           table_data += '</table>';
           $('#hmdb_table').html(table_data);
           // $('#example').DataTable();
-          $('#example').DataTable();
+          // $('#example').DataTable();
         }
       });
     }); 

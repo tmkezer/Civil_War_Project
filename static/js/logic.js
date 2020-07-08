@@ -161,7 +161,6 @@ points.addLayer(HistoricalMarker);
 // ## second dataset who's heritage is it anyway cluster map
 // 
 function confed() {
-    var confedmarker =
     // Add a new source from our GeoJSON data and
     // set the 'cluster' option to true. GL-JS will
     // add the point_count property to your source data.
@@ -329,3 +328,4 @@ function toggleCheck() {
       $(this).toggleClass('active');
     });
   });
+
