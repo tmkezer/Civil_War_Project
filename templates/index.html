@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Civil War Monuments</title>
 
+   <!-- our style.css sheet -->
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
 
@@ -22,11 +25,7 @@
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
-  
 
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Civil War Project</title>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
 
@@ -37,23 +36,81 @@
 
     <!-- Icons -->
     <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- <link rel="stylesheet" href="static/css/leaflet.extra-markers.min.css"> -->
+    <link rel="stylesheet" href="static/css/leaflet.extra-markers.min.css">
 
     <!-- Our CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navstyle.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-    
-</head>
-<!-- this is a test -->
-<body>
+   
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-toggle.css') }}">
+   <!-- Bootstrap template dependencies  -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+   <link rel="stylesheet" href="/static/css/style.css">
+   <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+         <meta name="description" content="">
+         <meta name="author" content="">
+         <title>Freelancer - Start Bootstrap Theme</title>
+         <!-- Font Awesome icons (free version)-->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+         <!-- Core theme CSS (includes Bootstrap)-->
+         <link href="/static/css/styles.css" rel="stylesheet">
+         <!-- Fonts CSS-->
+         <link rel="stylesheet" href="/static/css/heading.css">
+         <link rel="stylesheet" href="/static/css/body.css">
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+        
+        </head>
+<!-- new nav bar -->
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Civil War Monuments </a>
+            <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">DATA</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">ABOUT</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column"></div>
+              
+              <div class="image-block" style="background:url(https://www.artandobject.com/sites/default/files/styles/gallery_item/public/richmond-confederate-monument_0.jpg?itok=tVk_GRBh) no-repeat center center fixed;"></div>
+              <!-- <div class="spacing"></div> -->
+             <br>
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading mb-0">PLACEHOLDER TEXT</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="pre-wrap masthead-subheading font-weight-light mb-0">[PH] ispsum and so on </p>
+            </div>
+        </header>
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+<!-- OLD NAV BAR -->
    <!-- The div that holds our map -->
    <!-- <div id="map"></div> -->
-
     
-    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-        <div class="container">
+    <!-- <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+         <div class="container"> 
             <a class="navbar-brand mr-4" href="/">Civil War Project</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
                 aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,61 +129,423 @@
         </div>
     </nav>
 
+        <!-- Content Section 
+    
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <!-- <div class="container"> 
+            <a class="navbar-brand mr-4" href="/">Civil War Project</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+                aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+                <div class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link" href="/about">About</a>
+                    <a class="nav-item nav-link" href="/download">Download Data</a>
+                </div>
+
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="/">Search</a>
+                </div>
+            </div>
+        </div>
+    </nav> -->
+
         <!-- Content Section -->
+        <script>setTimeout(function(){ confed(); }, 1200);</script>
 <br>
 <br>
 <br>
-<div class="container">
+<script>
+  function stickyheaddsadaer(obj) {
+    if($(obj).is(":checked")){
+      alert("Yes checked"); //when checked
+      $("#page-header-inner").addClass("sticky");
+    }else{
+      alert("Not checked"); //when not checked
+    }
+    
+  }
+</script>
+<!-- <div class="container"> -->
     <div class="row">
       <div class="col-lg-7 col-md-12" >
         <!-- Left box  -->
         <div class="box">
-          <h3 class="title">Civil War Monuments</h3>
+          <h3 class="title">Civil War Monuments Location Map</h3>
           <hr>
+          <input type="checkbox" id="dataSwitch" data-toggle="toggle" 
+      data-on="Monument Database" data-off="Who's Heritage" 
+      onChange="toggleCheck()">
           <!-- <p>Map1</p> -->
-                <div id="map" style="width: 650px; height: 350px;"></div>
+          
+
+            <div id="map" style="width: 700px; height: 400px;"></div>
           
         </div>
       </div>
       <div class="col-lg-5 col-md-12">
         <!-- Right Box -->
         <div class="box">
-          <h3 class="title">Visualizations</h5>
+          <h3 class="title">Civil War Monuments Erected Over Time</h3>
          <hr>
+         <!-- <div class="container"> -->
+          <div class="row">
+              <div class="col-xs-12 col-md-12">
+                  <!-- <h1>Civil War Monuments Erected Over Time</h1> -->
+              </div>
+          </div>
+          <button onclick="update(csv1)">Dataset 1</button>
+          <button onclick="update(csv2)">Dataset 2</button>
+          <div class="row">
+              <div class="col-md-7">
+                  <div id="scatter">
+                      <!-- We append our chart here. -->
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-7 col-md-12" >
+          <!-- Left box  -->
+          <div class="box">
+            <h3 class="title">Monument types</h3>
+            <hr>
+            
+            <div id="svg-area" ></div>
+            
+          </div>
+        </div>
+        
 
-          <div class="container">
+
+
+          <!-- <div class="container">
             <div class="row" >
               <div class="col-6">
                 <div id="map-id" style="width: 650px; height: 350px;"></div>
               </div>
             </div>
-          </div>
+          </div> -->
 
-
+          <div class="text-center">
+            <h2 class="page-section-heading text-secondary mb-0 d-inline-block">DATA</h2>
         </div>
-      </div>
+        <!-- <div class="wrapper"> -->
+          
+         
+          <div class="container">
+            <div class="row margin-top-50">
+              <div class="col-md-12">
+                <aside class="filters">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Search for a specific date:</div>
+                    <div class="panel-body">
+                      <form>
+                        <div class="form-group">
+                          <ul class="list-group" id="filters">
+                            <li class="filter list-group-item">
+                                <label for="date">Enter a Date</label>
+                                <input class="search_box" id="datetime" type="text" placeholder="1/11/2011">
+                                <button id="fake" onclick="return false;" >Submit</button>
+                                
+                            </li>
+                          </ul>
+                        </div>
+                        
+                        <button type="button" name="load_data" id="load_data" class="btn btn-info">Load Data</button>
+                    </form>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+              <div class="col-md-12">
+                <div id="hmdb_table" class="table_format">      
+             </div>
+                <!-- <div id="table-area" class="table-responsive">
+                  <table id="ufo-table" class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th class="table-head">Date</th>
+                        <th class="table-head">City</th>
+                        <th class="table-head">State</th>
+                        <th class="table-head">Country</th>
+                        <th class="table-head">Shape</th>
+                        <th class="table-head">Duration</th>
+                        <th class="table-head">Comments</th>
+                      </tr>
+                    </thead>
+                    <tbody>            
+                    </tbody>
+                  </table>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="{{ url_for('static', filename='js/download.js') }}"></script>
+        <!-- <script src="/static/js/data.js"></script>
+        <script src="/static/js/app.js"></script> -->
+      </body>
+        <!-- Icon Divider-->
+       
+        <!-- Portfolio Grid Items-->
+        <div class="row justify-content-center">
+           
+<!-- Portfolio Modal-->
+<div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal0Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary mb-0">Log Cabin</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-<!-- 
+</div>
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary mb-0">Tasty Cake</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary mb-0">Circus Tent</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary mb-0">Controller</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary mb-0">Locked Safe</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal5Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary mb-0">Submarine</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="page-section bg-primary text-white mb-0" id="about">
     <div class="container">
-        <div class="row"style="padding: 30px;">
-            <div class="col-6"> </div>
-                <p>Map1</p>
-                <div id="map" style="width: 650px; height: 350px;"></div>
+        <!-- About Section Heading-->
+        <div class="text-center">
+            <h2 class="page-section-heading d-inline-block text-white">ABOUT</h2>
+        </div>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- About Section Content-->
+        <div class="row">
+            <div class="col-lg-4 ml-auto">
+                <p class="pre-wrap lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p>
             </div>
-            <div class="col-6">
-                <p>Map2</p>
-                <div id="map-id" style="width: 650px; height: 350px;"></div>
+            <div class="col-lg-4 mr-auto">
+                <p class="pre-wrap lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p>
             </div>
-        </div> -->
+        </div>
+    </div>
+</section>
+<div>
+<section class="page-section" id="contact">
+    <div class="container">
+        <!-- Contact Section Heading-->
+        <div class="text-center">
+            <h2 class="page-section-heading text-secondary d-inline-block mb-0">CONTACT</h2>
+        </div>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Contact Section Content-->
         
+         <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="icon-contact mb-3"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="text-muted">Phone</div>
+                    <div class="lead font-weight-bold">(555) 555-5555</div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="icon-contact mb-3"><i class="far fa-envelope"></i></div>
+                    <div class="text-muted">Email</div><a class="lead font-weight-bold" href="mailto:name@example.com">name@example.com</a>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+  
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+
+<section>
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="mb-4">LOCATION</h4>
+                    <p class="pre-wrap lead mb-0">2215 John Daniel Drive Clark, MO 65243</p>
+                </div>
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="mb-4">AROUND THE WEB</h4><a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/StartBootstrap"><i class="fab fa-fw fa-facebook-f"></i></a><a class="btn btn-outline-light btn-social mx-1" href="https://www.twitter.com/sbootstrap"><i class="fab fa-fw fa-twitter"></i></a><a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/startbootstrap"><i class="fab fa-fw fa-linkedin-in"></i></a><a class="btn btn-outline-light btn-social mx-1" href="https://www.dribble.com/startbootstrap"><i class="fab fa-fw fa-dribbble"></i></a>
+                </div>
+                <!-- Footer About Text-->
+                <div class="col-lg-4">
+                    <h4 class="mb-4">ABOUT FREELANCER</h4>
+                    <p class="pre-wrap lead mb-0">Freelance is a free to use, MIT licensed Bootstrap theme created by Start Bootstrap</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>       
 
 
     <!-- D3 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script> -->
 
     <!-- MomentJS -->
-    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
 
     <!-- Leaflet JavaScript -->
     <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
@@ -134,21 +553,25 @@
         crossorigin=""></script>
 
     <!-- Icons -->
-    <!-- <script src="static/js/leaflet.extra-markers.min.js"></script> -->
+    <script src="static/js/leaflet.extra-markers.min.js"></script>
 
     <!-- polyfill.io is library for using newer JavaScript features in older browers (such as Object.assign) -->
-    <!-- <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script> -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 
     <!-- API Key -->
     <script src="{{ url_for('static', filename='js/config.js') }}"></script>
 
     <!-- Our JavaScript -->
-    <script src="{{ url_for('static', filename='js/logic.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/logic1.js') }}"></script>
+    <!-- <script type="text/javascript" src="/static/js/logic.js"></script> -->
+   
+    <!-- <script src="terbear/graph_logic.js"></script> -->
     <!-- <script src="{{ url_for('static', filename='js/logic3.js') }}"></script> -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <!-- <script src="{{ url_for('static', filename='js/logic1.js') }}"></script> -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
@@ -162,7 +585,9 @@
 
   <!-- MomentJS -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-
+  <!-- Toggle Switch CSS/JS -->
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <!-- Leaflet JavaScript -->
   <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
     integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
@@ -173,9 +598,22 @@
 
   <!-- polyfill.io is library for using newer JavaScript features in older browers (such as Object.assign) -->
   <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-
-  <!-- API Key -->
-  <script type="text/javascript" src="static/js/config.js"></script>
+  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+  <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <!-- Third party plugin JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <!-- Contact form JS-->
+  <!-- <script src="/static/mail/jqBootstrapValidation.js"></script> -->
+  <!-- <script src="/static/mail/contact_me.js"></script> -->
+  <!-- Core theme JS-->
+  <script src="/static/js/scripts.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/logic.js') }}"></script>
+  <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/logic1.js') }}"></script> -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/graph_logic.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/logic3.js') }}"></script>
 
 </body>
 
