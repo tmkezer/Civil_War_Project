@@ -12,6 +12,7 @@ body {
   fill: rgb(173, 242, 245);
   stroke: rgb(255, 0, 0);
   stroke-width: 2px;
+<<<<<<< Updated upstream
 }
 
 #customers {
@@ -37,3 +38,6 @@ body {
   color: white;
 }
 
+=======
+};
+>>>>>>> Stashed changes

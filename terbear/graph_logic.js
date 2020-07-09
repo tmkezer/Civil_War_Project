@@ -10,7 +10,13 @@ var svg = d3.select("#scatter")
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform",
-        "translate(" + margin.left + "," + margin.top + ")");
+        "translate(" + margin.left + "," + margin.top + ")")
+
+svg.append("rect")
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .attr("fill", "rgb(" + 185 + "," + 185 + "," + 185 + ")")
+    .attr("transform", "translate(-50, -10)")
 
 
 // Initialise a X axis:
@@ -49,13 +55,26 @@ function update(csv) {
 
         monumentData.forEach(function (data) {
             data.textyear = +data.year;
-            console.log("textyear value");
-            console.log(data.textyear);
+            // console.log("textyear value");
+            // console.log(data.textyear);
             data.year = parseTime(data.year);
-            console.log("year value")
-            console.log(data.year);
+            // console.log("year value")
+            // console.log(data.year);
             data.monuments_erected = +data.monuments_erected;
         });
+
+        if (csv == "test.csv") {
+            console.log("color will be blue");
+            circleColor = "rgb(" + 0 + "," + 120 + "," + 240 + ")";
+            fillColor = "rgb(" + 0 + "," + 185 + "," + 185 + ")";
+        }
+
+        else if (csv == "test2.csv") {
+            console.log("color will be red");
+            circleColor = "rgb(" + 230 + "," + 35 + "," + 0 + ")";
+            fillColor = "rgb(" + 220 + "," + 120 + "," + 0 + ")";
+        }
+
 
         var xTimeScale = d3.scaleLinear()
             .range([0, width])
@@ -80,7 +99,7 @@ function update(csv) {
         var xLinearScale = xScale(monumentData);
 
         var bottomAxis = d3.axisBottom(xLinearScale);
-        
+
 
         // Create the X axis:
         x.domain(d3.extent(monumentData, data => data.textyear));
@@ -110,8 +129,8 @@ function update(csv) {
             .attr("d", d3.line()
                 .x(function (d) { return x(d.textyear); })
                 .y(function (d) { return y(d.monuments_erected); }))
-            .attr("fill", "rgb(" + 173 + "," + 242 + "," + 239 + ")")
-            .attr("stroke", "steelblue")
+            .attr("fill", fillColor)
+            .attr("stroke", "black")
             .attr("stroke-width", 1.5)
 
         var mousemove = function (d) {
@@ -143,9 +162,9 @@ function update(csv) {
             .duration(3000)
             .attr("cx", d => xTimeScale(d.textyear))
             .attr("cy", d => yLinearScale(d.monuments_erected))
-            .attr("r", 2)
-            .attr("fill", "black")
-            .attr("opacity", ".5");
+            .attr("r", 3)
+            .attr("fill", circleColor)
+            .attr("opacity", ".75");
 
 
 
@@ -156,7 +175,7 @@ function update(csv) {
                 d3.select(this).attr("r", 5).style("opacity", 1);
             })
             .on("mouseout", function (d) {
-                d3.select(this).attr("r", 2).style("opacity", .5);
+                d3.select(this).attr("r", 3).style("opacity", .75);
             });
     })
 };
