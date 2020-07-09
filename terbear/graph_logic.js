@@ -14,8 +14,8 @@ var svg = d3.select("#scatter")
 
 
 // Initialise a X axis:
-var x = d3.scaleTime().range([0, width])
-var xAxis = d3.axisBottom().scale(x);
+var x = d3.scaleLinear().range([0, width])
+var xAxis = d3.axisBottom().scale(x).tickFormat(d3.format("d"));
 svg.append("g")
     .attr("transform", "translate(0," + height + ")")
     .attr("class", "myXaxis")
@@ -59,7 +59,7 @@ function update(csv) {
 
         var xTimeScale = d3.scaleLinear()
             .range([0, width])
-            .domain(d3.extent(monumentData, data => data.year));
+            .domain(d3.extent(monumentData, data => data.textyear));
 
         var yLinearScale = d3.scaleLinear()
             .range([height, 0])
@@ -68,8 +68,8 @@ function update(csv) {
         function xScale(monumentData) {
             // create scales
             var xLinearScale = d3.scaleLinear()
-                .domain([d3.min(monumentData, d => d.year) * 0.8,
-                d3.max(monumentData, d => d.year) * 1.2
+                .domain([d3.min(monumentData, d => d.textyear) * 0.8,
+                d3.max(monumentData, d => d.textyear) * 1.2
                 ])
                 .range([0, width]);
 
@@ -83,7 +83,7 @@ function update(csv) {
         
 
         // Create the X axis:
-        x.domain(d3.extent(monumentData, data => data.year));
+        x.domain(d3.extent(monumentData, data => data.textyear));
         svg.selectAll(".myXaxis").transition()
             .duration(3000)
             .call(xAxis);
@@ -97,7 +97,7 @@ function update(csv) {
 
         // Create a update selection: bind to the new data
         var u = svg.selectAll(".lineTest")
-            .data([monumentData], function (d) { return d.year });
+            .data([monumentData], function (d) { return d.textyear });
 
         // Updata the line
         u
@@ -108,7 +108,7 @@ function update(csv) {
             .transition()
             .duration(3000)
             .attr("d", d3.line()
-                .x(function (d) { return x(d.year); })
+                .x(function (d) { return x(d.textyear); })
                 .y(function (d) { return y(d.monuments_erected); }))
             .attr("fill", "rgb(" + 173 + "," + 242 + "," + 239 + ")")
             .attr("stroke", "steelblue")
@@ -116,6 +116,7 @@ function update(csv) {
 
         var mousemove = function (d) {
             tooltip
+                .style("display", "block")
                 .html("Year: " + d.textyear + "<br/>" + "Monuments Erected: " + d.monuments_erected)
                 .style("left", (d3.mouse(this)[0] + 90) + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
                 .style("top", (d3.mouse(this)[1]) + "px")
@@ -128,6 +129,7 @@ function update(csv) {
                 // .transition()
                 // .duration(200)
                 .style("opacity", 0)
+                .style("display", "none")
         }
 
         var c = svg.selectAll("circle");
@@ -139,7 +141,7 @@ function update(csv) {
             .merge(c)
             .transition()
             .duration(3000)
-            .attr("cx", d => xTimeScale(d.year))
+            .attr("cx", d => xTimeScale(d.textyear))
             .attr("cy", d => yLinearScale(d.monuments_erected))
             .attr("r", 2)
             .attr("fill", "black")
