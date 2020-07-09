@@ -15,12 +15,6 @@
   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
   crossorigin=""/>
 
-  <!-- Icons -->
-  <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <link rel="stylesheet" href="static/css/leaflet.extra-markers.min.css">
-
-  <!-- Our CSS -->
-  <!-- <link rel="stylesheet" type="text/css" href="static/css/style.css"> -->
   <!-- mapbox-gl  -->
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
@@ -35,8 +29,8 @@
         crossorigin="" />
 
     <!-- Icons -->
-    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="static/css/leaflet.extra-markers.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="static/css/leaflet.extra-markers.min.css"> -->
 
     <!-- Our CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -63,7 +57,6 @@
          <link rel="stylesheet" href="/static/css/heading.css">
          <link rel="stylesheet" href="/static/css/body.css">
          <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
          <link href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css" rel="stylesheet">
          <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -88,8 +81,10 @@
     </nav>
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column"></div>
-              
-              <div class="image-block" style="background:url(https://www.artandobject.com/sites/default/files/styles/gallery_item/public/richmond-confederate-monument_0.jpg?itok=tVk_GRBh) no-repeat center center fixed;"></div>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+           
+            <div class="parallax" data-parallax="scroll" data-z-index="1" speed="0.2" position= "center bottom"
+             data-image-src="/static/img/200613-robert-e-lee-statue-virginia-al.webp"></div>
               <!-- <div class="spacing"></div> -->
              <br>
                 <!-- Masthead Heading-->
@@ -105,147 +100,138 @@
             </div>
         </header>
         <section class="page-section portfolio" id="portfolio">
-            <div class="container">
+    <div class="container">
 
 
         <!-- Content Section -->
         <div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal0Label" aria-hidden="true"></div>
         <script>setTimeout(function(){ confed(); }, 3500);</script>
-<br>
-<br>
-<br>
-<script>
-  function stickyheaddsadaer(obj) {
-    if($(obj).is(":checked")){
-      alert("Yes checked"); //when checked
-      $("#page-header-inner").addClass("sticky");
-    }else{
-      alert("Not checked"); //when not checked
-    }
-    
-  }
-</script>
-<div class="container">
-    <div class="row">
-      <div class="col-lg-6 col-md-12" >
-        <!-- Left box  -->
-        <div class="box">
-          <h3 class="title">Civil War Monuments Location Map</h3>
-          <hr>
-          <input type="checkbox" id="dataSwitch" data-toggle="toggle" 
-      data-on="Monument Database" data-off="Who's Heritage" 
-      onChange="toggleCheck()">
-          <!-- <p>Map1</p> -->
-          
-
-            <div id="map" style="width: 700px; height: 400px;"></div>
-          
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-12">
-        <!-- Right Box -->
-        <div class="box">
-          <h3 class="title">Civil War Monuments Erected Over Time</h3>
-         <hr>
-         <!-- <div class="container"></div> -->
-          <div class="row">
-              <div class="col-xs-12 col-md-12">
-                  <!-- <h1>Civil War Monuments Erected Over Time</h1> -->
-              </div>
-          </div>
-          <button onclick="update(csv1)">Dataset 1</button>
-          <button onclick="update(csv2)">Dataset 2</button>
-          <div class="row">
-              <div class="col-md-7">
-                  <div id="scatter">
-                      <!-- We append our chart here. -->
-                  </div>
-              </div>
+            <br>
+            <br>
+            <br>
+            <script>
+            function stickyheaddsadaer(obj) {
+                if($(obj).is(":checked")){
+                alert("Yes checked"); //when checked
+                $("#page-header-inner").addClass("sticky");
+                }else{
+                alert("Not checked"); //when not checked
+                }}
+            </script>
+            <div class="container">
+                <div class="row">
+                <div class="col-lg-6" >
+                    <!-- Left box  -->
+                    <div class="box">
+                    <h3 class="title">Civil War Monuments Location Map</h3>
+                    <hr>
+                    <input type="checkbox" id="dataSwitch" data-toggle="toggle" 
+                data-on="Monument Database" data-off="Who's Heritage" 
+                onChange="toggleCheck()">
+                    <!-- <p>Map1</p> -->
+                        <div id="map" style="width: 700px; height: 400px;"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- Right Box -->
+                    <div class="box">
+                    <h3 class="title">Civil War Monuments Erected Over Time</h3>
+                    <hr>
+                    <!-- <div class="container"></div> -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- <h1>Civil War Monuments Erected Over Time</h1> -->
+                        </div>
+                    </div>
+                    <button onclick="update(csv1)">Dataset 1</button>
+                    <button onclick="update(csv2)">Dataset 2</button>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div id="scatter">
+                                <!-- We append our chart here. -->
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7" >
+                    <!-- Left box  -->
+                    <div class="box">
+                        <h3 class="title">Monument types</h3>
+                        <hr>
+                        <div id="svg-area" ></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
             </div>
+    </div>
+        </section>
+        <section>
+            <section class="page-section bg-primary text-white mb-0" id="about">
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block text-white">DATA</h2>
+                </div>
+                 <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-7 col-md-12" >
-          <!-- Left box  -->
-          <div class="box">
-            <h3 class="title">Monument types</h3>
-            <hr>
-            
-            <div id="svg-area" ></div>
-            
-          </div>
-        </div>
-        
-
-
-
-          <!-- <div class="container">
-            <div class="row" >
-              <div class="col-6">
-                <div id="map-id" style="width: 650px; height: 350px;"></div>
-              </div>
-            </div>
-          </div> -->
-    </div>
-    </div>
-</div>
-    <div class="container">
-          <div class="text-center">
-            <h2 class="page-section-heading text-secondary mb-0 d-inline-block">DATA</h2>
-            <form>
-                        
-        
-                <button type="button" name="load_data" id="load_data" class="btn btn-info">Load Data</button>
+        <div class="container"></div>
+                    <div class="text-center">
+                        <form>
+                            <button type="button" name="load_data" id="load_data" class="btn btn-info">Load Data</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+                
+                <br>
+                <br>
                 <div class="col-md-12">
                     <div id="hmdb_table" class="table_format">      
-                 </div>
-            </form>
+                </div>
+            </section>
+        
+        <script src="{{ url_for('static', filename='js/download.js') }}"></script>
+       
+        <div class="row justify-content-center">
+    </div>
+    </div>
+</section> 
+<!-- about-->
+<section class="page-section" id="contact"></section>
+<section class="page-section bg-primary text-white mb-0" id="about">
+    <!-- <div class="container"> -->
+        <!-- About Section Heading-->
+        <div class="text-center">
+            <h2 class="page-section-heading d-inline-block text-white">ABOUT</h2>
+        </div>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- About Section Content-->
+        <div class="row">
+            <div class="col-lg-4 ml-auto">
+                <p class="pre-wrap lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p>
+            </div>
+            <div class="col-lg-4 mr-auto">
+                <p class="pre-wrap lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p>
+            </div>
         </div>
     </div>
-        <!-- <div class="wrapper"> -->
-          
-         
-          <!-- <div class="container">
-            <div class="row margin-top-50">
-              <div class="col-md-12">
-                <aside class="filters">
-                  <div class="panel panel-default">
-                    <!-- <div class="panel-heading"></div> -->
-                    <!-- <div class="panel-body">
-                      
-                    </div>
-                  </div>
-                </aside>
-              </div>
-              <div class="col-md-12">
-                <div id="hmdb_table" class="table_format">      
-             </div>
-                
-              </div>
-            </div>
-          </div>
-        </div> --> 
-        <script src="{{ url_for('static', filename='js/download.js') }}"></script>
-        <!-- <script src="/static/js/data.js"></script>
-        <script src="/static/js/app.js"></script> -->
-      
-        <!-- Icon Divider-->
-       
-        <!-- Portfolio Grid Items-->
-        <div class="row justify-content-center">
-           
-<!-- Portfolio Modal-->
-
-    
-
-  
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script> -->
+</section>
+ 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
 
 <section>
     <footer class="footer text-center">
-        <div class="container">
+        <!-- <div class="container"> -->
             <div class="row">
                 <!-- Footer Location-->
                 <div class="col-lg-4 mb-5 mb-lg-0">
@@ -265,9 +251,7 @@
         </div>
     </footer>
 </section>       
-
-
-    <!-- D3 -->
+   <!-- D3 -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script> -->
 
@@ -279,9 +263,6 @@
         integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
         crossorigin=""></script>
 
-    <!-- Icons -->
-    <script src="static/js/leaflet.extra-markers.min.js"></script>
-
     <!-- polyfill.io is library for using newer JavaScript features in older browers (such as Object.assign) -->
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 
@@ -290,11 +271,7 @@
 
     <!-- Our JavaScript -->
     <!-- <script type="text/javascript" src="/static/js/logic.js"></script> -->
-   
-    <!-- <script src="terbear/graph_logic.js"></script> -->
-    <!-- <script src="{{ url_for('static', filename='js/logic3.js') }}"></script> -->
-    <!-- <script src="{{ url_for('static', filename='js/logic1.js') }}"></script> -->
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -320,8 +297,7 @@
     integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
     crossorigin=""></script>
 
-  <!-- Icons -->
-  <script src="static/js/leaflet.extra-markers.min.js"></script>
+
 
   <!-- polyfill.io is library for using newer JavaScript features in older browers (such as Object.assign) -->
   <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
@@ -338,7 +314,7 @@
   <!-- Core theme JS-->
   <script src="/static/js/scripts.js"></script>
   <script type="text/javascript" src="{{ url_for('static', filename='js/logic.js') }}"></script>
-  <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/logic1.js') }}"></script> -->
+
   <script type="text/javascript" src="{{ url_for('static', filename='js/graph_logic.js') }}"></script>
   <script src="{{ url_for('static', filename='js/logic3.js') }}"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -349,6 +325,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js'></script>
   <script src='https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js'></script>
   <script src='https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js'></script>
+  <script src="/static/js/parallax.js"></script>
 </body>
 
 </html>

@@ -440,3 +440,8 @@ body {
 .axisRed text{
   fill: whitesmoke;
 }
+.parallax {
+  min-height: 700px;
+  background: transparent;
+  
+}
