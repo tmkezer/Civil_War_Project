@@ -91,9 +91,6 @@ body {
   margin: 0;
 }
 
-.axis {
-  font: 14px sans-serif;
-}
 
 .line {
   fill: rgb(173, 242, 245);
@@ -465,4 +462,36 @@ img {
   font-family: Franklin,arial,sans-serif;
   line-height: 1.25;
   font-size: .875rem;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.myXaxis line{
+  stroke: white;
+}
+
+.myXaxis path{
+  stroke: white;
+}
+
+.myXaxis text{
+  fill: white;
+}
+
+.myYaxis line{
+  stroke: white;
+}
+
+.myYaxis path{
+  stroke: white;
+}
+
+.myYaxis text{
+  fill: white;
+}
+a:visited {
+  color: rgb(132, 0, 255);
 }

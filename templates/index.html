@@ -134,7 +134,9 @@
                             <h2 style="text-align: center;"class="display-4">Why these Monuments matter</h2>
                             <hr>
                             <p>Confederate monuments are facing renewed scrutiny as protesters, angered by the death of George Floyd in police custody in Minneapolis
-                                “The conversation has never really died,” said Lecia Brooks, outreach director at the Southern Poverty Law Center in Montgomery, Ala.</p>
+                                “The conversation has never really died,” said Lecia Brooks, outreach director at the Southern Poverty Law Center in Montgomery, Ala.
+                            <br><br>
+                                This is not the first time these efforts have been made to take down these monumnets </p>
                         </div>
                         </div>
                     </div>
@@ -158,7 +160,11 @@
                         <div class="p-5">
                             <h2 style="text-align: center;" class="display-4">We salute you!</h2>
                             <hr>
-                            <p class="color: #666;"> It may supprise you to learn that Civil War monuments make up the second largest catagory of U.S. 
+                            <p class="color: #666;"> “Eventually they started to build [Confederate] monuments,” he says. “The vast majority of them were
+                                 built between the 1890s and 1950s, which matches up exactly with the era of Jim Crow segregation.” According to the 
+                                 Southern Poverty Law Center’s research, the biggest spike was between 1900 and the 1920s.<a  href="#VISUALIZATION" class="js-scroll-trigger";>as shown here</a>
+                                 <br><br>
+                                It may supprise you to learn that Civil War monuments make up the second largest catagory of U.S. 
                                 monuments second only to Settlements & Settlers. <a  href="#hmdb_table" class="js-scroll-trigger";>As shown in fig 3</a> 
                                 </p>
                         </div>
@@ -191,13 +197,49 @@
               </div>
             </div>
           </section>
-        
+          <div style="background-color: #ff8800c2!important;" class="container">
+            <!-- <div class="box"> -->
+                
+            <!-- </div> -->
+        </div>
         </section>
-    <!-- </section> -->
+
+        <div   class="row">
+            <!-- <div class="box">
+                   <div class="p-5"> -->
+                       <!-- <img class="img-fluid rounded-circle" src="static/img/fight_over_history2.webp" alt="">  -->
+                       
+           
+           
+           <!-- <div class="col-lg-6"> -->
+            <div style="text-align: center; margin: auto;" class="p-5">  
+                <br>
+               <h2 style="text-align: center;" class="display-4">Data Sources</h2>
+               <hr>
+               <p style="text-align: center; color: rgb(0, 0, 0);">  The two Data soruces we used in this project are <a href="https://www.hmdb.org/results.asp?FilterTown=&FilterCounty=&FilterState=&FilterCountry=&CategoryID=15" >The Historical Markers Database's collection of Civil War monuments</a>   
+                and the Southern Poverty Law Center's <a href="https://www.splcenter.org/20190201/whose-heritage-public-symbols-confederacy" >whose heitage is it anyway</a>
+                </p>
+           </div>
+           
+        </div>
+        </div>
+       </div>
+    </section> 
         <section class="page-section portfolio" id="VISUALIZATION">
     <div class="container">
+        <div class="text-center">
+        <h2 class="page-section-heading d-inline-block">Swap Data Sets</h2>
+            <!-- Icon Divider-->
+        <div class="divider-custom divider-dark">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <input type="checkbox" id="dataSwitch" data-toggle="toggle" 
+        data-on="Monument Database" data-off="Whose Heritage" 
+        onChange="toggleCheck()">
+        </div>
 
-    
         <!-- Content Section -->
         <div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal0Label" aria-hidden="true"></div>
         <script>setTimeout(function(){ confed(); }, 3500);</script>
@@ -220,9 +262,7 @@
                     <div class="box">
                     <h3 class="title">Civil War Monuments Location Map</h3>
                     <hr>
-                    <input type="checkbox" id="dataSwitch" data-toggle="toggle" 
-                data-on="Monument Database" data-off="Who's Heritage" 
-                onChange="toggleCheck()">
+                    
                     <!-- <p>Map1</p> -->
                         <div id="map" style="width: 700px; height: 400px;"></div>
                     </div>
@@ -238,8 +278,6 @@
                             <!-- <h1>Civil War Monuments Erected Over Time</h1> -->
                         </div>
                     </div>
-                    <button onclick="update(csv1)">HMDB</button>
-                    <button onclick="update(csv2)">Whose Heritage</button>
                     <div class="row">
                         <div class="col-md-7">
                             <div id="scatter">
@@ -278,8 +316,8 @@
         <div class="container"></div>
                     <div class="text-center">
                         <form>
-                            <button type="button" name="load_data" id="load_data1" class="btn btn-info">Load Dataset 1</button>
-                            <button type="button" name="load_data" id="load_data2" class="btn btn-info">Load Dataset 2</button>
+                            <button type="button" name="load_data" id="load_data1" class="btn btn-info">Load Historical Monument Data</button>
+                            <button type="button" name="load_data" id="load_data2" class="btn btn-info">Load Whose Heritage Data</button>
                         </form>
                     </div>
                 </div>

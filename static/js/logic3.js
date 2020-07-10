@@ -118,7 +118,8 @@ chartGroup.selectAll(".bar")
  // Step 1: Initialize Tooltip
 var tooltip = d3.select("body")
                   .append("div")
-                  .attr("class", "toolTip");
+                  .attr("class", "toolTip")
+                  .style("display", "none");
 
 
 });

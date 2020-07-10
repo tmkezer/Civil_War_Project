@@ -64,13 +64,13 @@ function update(csv) {
         });
 
         if (csv == "test.csv") {
-            console.log("color will be blue");
+            // console.log("color will be blue");
             circleColor = "rgb(" + 0 + "," + 120 + "," + 240 + ")";
             fillColor = "#290BD6";
         }
 
         else if (csv == "test2.csv") {
-            console.log("color will be red");
+            // console.log("color will be red");
             circleColor = "rgb(" + 230 + "," + 35 + "," + 0 + ")";
             fillColor = "rgb(" + 220 + "," + 120 + "," + 0 + ")";
         }
