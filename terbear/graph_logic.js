@@ -15,7 +15,7 @@ var svg = d3.select("#scatter")
 svg.append("rect")
     .attr("width", "100%")
     .attr("height", "100%")
-    .attr("fill", "rgb(" + 185 + "," + 185 + "," + 185 + ")")
+    .attr("fill", "rgb(" + 54 + "," + 53 + "," + 53 + ")")
     .attr("transform", "translate(-50, -10)")
 
 
@@ -32,8 +32,8 @@ var yAxis = d3.axisLeft().scale(y);
 svg.append("g")
     .attr("class", "myYaxis")
 
-csv1 = "test.csv"
-csv2 = "test2.csv"
+csv1 = "test.csv" // HMDB Data
+csv2 = "test2.csv" // WHOSE Data
 
 var parseTime = d3.timeParse("%Y");
 
@@ -66,7 +66,7 @@ function update(csv) {
         if (csv == "test.csv") {
             console.log("color will be blue");
             circleColor = "rgb(" + 0 + "," + 120 + "," + 240 + ")";
-            fillColor = "rgb(" + 0 + "," + 185 + "," + 185 + ")";
+            fillColor = "#290BD6";
         }
 
         else if (csv == "test2.csv") {
@@ -130,7 +130,7 @@ function update(csv) {
                 .x(function (d) { return x(d.textyear); })
                 .y(function (d) { return y(d.monuments_erected); }))
             .attr("fill", fillColor)
-            .attr("stroke", "black")
+            .attr("stroke", "white")
             .attr("stroke-width", 1.5)
 
         var mousemove = function (d) {
@@ -181,5 +181,5 @@ function update(csv) {
 };
 
 // At the beginning, I run the update function on the first dataset:
-update(csv1);
-update(csv1);
+update(csv2);
+update(csv2);
