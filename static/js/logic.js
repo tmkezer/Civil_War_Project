@@ -317,8 +317,10 @@ function removeConfedLayer() { try {
 function toggleCheck() {
     if(document.getElementById("dataSwitch").checked === true){
         removeConfedLayer();HMBD();
+        update(csv1)
     } else {
       removeHMDBLayer();confed();
+      update(csv2)
     }
   }
   

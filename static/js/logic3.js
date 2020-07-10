@@ -113,7 +113,7 @@ chartGroup.selectAll(".bar")
    ;
   //  console.log(d);
   })
-  .on("mouseout", function(d){ tooltip.style("display", "none");});
+  .on("mouseout", function(){ tooltip.style("display", "none");});
 // console.log("Logic3 file");
  // Step 1: Initialize Tooltip
 var tooltip = d3.select("body")

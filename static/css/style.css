@@ -44,7 +44,7 @@ html,
   height:70% !important;
 } */
 p{
-  color: black;
+  color: rgb(255, 255, 255);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 17px; 
   }
@@ -444,4 +444,25 @@ body {
   min-height: 700px;
   background: transparent;
   
+}
+.rounded-circle {
+  border-radius: 50%!important;
+}
+.img-fluid {
+  max-width: 75%!important;
+  height: auto;
+}
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+.imgCap {
+  color: #666;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  margin-right: 30px;
+  margin-left: 15px;
+  font-family: Franklin,arial,sans-serif;
+  line-height: 1.25;
+  font-size: .875rem;
 }
