@@ -13,7 +13,8 @@ function init() {
     labels: labels1,
     type: "pie"
   }];
-
+  // figure.layout.plot_bgcolor = '#DCDCDC'
+  // figure.layout.paper_bgcolor = '#fff'
   var layout = {
     height: 400,
     width: 700
@@ -42,12 +43,13 @@ function getData() {
       labels = labels1;
   }
   // Call function to update the chart
-  updatePlotly(data);
+  updatePlotly(data, labels);
 }
 
 // Update the restyled plot's values
-function updatePlotly(newdata) {
+function updatePlotly(newdata, labels) {
   Plotly.restyle("pie", "values", [newdata]);
+  Plotly.restyle("pie", "labels", [labels]);
 }
 
 init();
