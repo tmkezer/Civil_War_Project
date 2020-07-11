@@ -44,7 +44,7 @@ html,
   height:70% !important;
 } */
 p{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 17px; 
   }
@@ -94,7 +94,7 @@ body {
 
 .line {
   fill: rgb(173, 242, 245);
-  stroke: rgb(255, 0, 0);
+  stroke: rgb(0, 0, 0);
   stroke-width: 2px;
 }
 

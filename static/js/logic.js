@@ -1,5 +1,5 @@
 
-var points = L.layerGroup();
+// var points = L.layerGroup();
 // https://docs.mapbox.com/mapbox-gl-js/example/cluster/
 // note # earthquakes in original comments  have been changed to HMdb-Markers
 // Use this link to get the geojson data.
@@ -123,24 +123,14 @@ function HMBD() {
         console.log(coordinates)
         var Title = e.features[0].properties.Title;
         var Link = e.features[0].properties.Link;
-        // var tsunami;
         
-        // if (e.features[0].properties.tsunami === 1) {
-        // tsunami = 'yes';
-        // } else {
-        // tsunami = 'no';
-        // }
-        
-        // Ensure that if the map is zoomed out such that
-        // multiple copies of the feature are visible, the
-        // popup appears over the copy being pointed to.
         while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
         coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         }
         
         new mapboxgl.Popup()
         .setLngLat(coordinates)
-        .setHTML(`<p><a href=${Link}> ${Title} </a><br>Placeholder Text:</p>`
+        .setHTML(`<p><a href=${Link}> ${Title} </a></p>`
         )
         .addTo(map);
         
@@ -152,7 +142,7 @@ function HMBD() {
         map.on('mouseleave', 'clusters', function() {
         map.getCanvas().style.cursor = '';
         });
-points.addLayer(HistoricalMarker);
+// points.addLayer(HistoricalMarker);
 };
 
 
@@ -233,7 +223,7 @@ map.addLayer({
     'circle-stroke-width': 1,
     'circle-stroke-color': '#fff'
     }
-    })
+    });
 
 // inspect a cluster on click
 map.on('click', 'clusters-confed', function(e) {
@@ -263,18 +253,6 @@ map.on('click', 'clusters-confed', function(e) {
     var Title = e.features[0].properties.feature_name;
     var Honorees = e.features[0].properties.Honorees;
 
-    // leftover snippit
-    // var tsunami;
-     
-    // if (e.features[0].properties.tsunami === 1) {
-    // tsunami = 'yes';
-    // } else {
-    // tsunami = 'no';
-    // }
-     
-    // Ensure that if the map is zoomed out such that
-    // multiple copies of the feature are visible, the
-    // popup appears over the copy being pointed to.
     while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
     }
@@ -282,10 +260,11 @@ map.on('click', 'clusters-confed', function(e) {
     new mapboxgl.Popup()
     .setLngLat(coordinates)
     .setHTML(
-     `<p>${Honorees} ${Title} </a><br>Placeholder Text:</p>`
+     `<p>${Honorees} ${Title} </a></p>`
     )
+    // .setclass('')
     .addTo(map);
-    e.stopPropagation();
+    // e.stopPropagation();
     });
      
     map.on('mouseenter', 'clusters-confed', function() {
