@@ -28,9 +28,8 @@
         integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
         crossorigin="" />
 
-    <!-- Icons -->
-    <!-- <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="static/css/leaflet.extra-markers.min.css"> -->
+    <!-- plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     <!-- Our CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -255,7 +254,7 @@
                 alert("Not checked"); //when not checked
                 }}
             </script>
-            <div class="container">
+        <div class="container">
                 <div class="row">
                 <div class="col-lg-6" >
                     <!-- Left box  -->
@@ -272,34 +271,41 @@
                     <div class="box">
                     <h3 class="title">Civil War Monuments Erected Over Time</h3>
                     <hr>
-                    <!-- <div class="container"></div> -->
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <!-- <h1>Civil War Monuments Erected Over Time</h1> -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-7">
-                            <div id="scatter">
-                                <!-- We append our chart here. -->
-                            </div>
-                        </div>
-                        </div>
+
+                    <!-- scatter plot -->
+                            <div id="scatter"></div>
                     </div>
                 </div>
+                </div>
+                  
                 <div class="row">
-                    <div class="col-lg-7" >
+                    <div class="col-lg-6" >
                     <!-- Left box  -->
                     <div class="box">
-                        <h3 class="title">Monument types</h3>
+                        <h3 class="title">Monuments by Topic</h3>
                         <hr>
+                        <!-- SVG area -->
                         <div id="svg-area" ></div>
                     </div>
+                    </div>
+                
+                <div class="col-lg-6" >
+                    <div class="box">
+                        <h3 class="title">Pie Chart</h3>
+                        <hr>
+                        <h2>Monuments Categories</h2>
+                        <select id="selDataset" onchange="getData(this.value)">
+		                <option value="war">War</option>  
+		                <option value="non_war">Non-War</option></select>
+                            <div style="color:black; width: 700px; height: 400px;" id="pie"></div>
                     </div>
                 </div>
                 </div>
             </div>
-    </div>
+
+            
+        </div>
+
         </section>
         <section>
             <section class="page-section bg-primary text-white mb-0" id="DATA">
@@ -334,7 +340,10 @@
        
         <div class="row justify-content-center">
     </div>
+    
     </div>
+
+    
 </section> 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
@@ -360,6 +369,7 @@
             </div>
         </div>
     </footer>
+
 </section>       
    <!-- D3 -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
@@ -436,6 +446,8 @@
   <script src='https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js'></script>
   <script src='https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js'></script>
   <script src="/static/js/parallax.js"></script>
+  <script src="static/js/data.js"></script>
+    <script src="static/js/plot.js"></script>
 </body>
 
 </html>
